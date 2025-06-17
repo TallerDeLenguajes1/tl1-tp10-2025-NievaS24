@@ -1,7 +1,5 @@
-﻿Tarea tarea = new Tarea();
-
-// tarea.id = 1;
-// Console.WriteLine(tarea.id);
-// tarea.id = 56;
-// Console.WriteLine(tarea.id);
-
+﻿HttpClient client = new HttpClient();
+HttpResponseMessage response = await client.GetAsync("https://jsonplaceholder.typicode.com/todos/");
+response.EnsureSuccessStatusCode();
+string responseBody = await response.Content.ReadAsStringAsync();
+Console.WriteLine(responseBody); // Para ver si funciona la solicitud GET
