@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Tareas",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/Tareas/bin/Debug/net8.0/Tareas.dll",
+            "cwd": "${workspaceFolder}/Tareas",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Usuarios",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/Usuarios/bin/Debug/net8.0/Usuarios.dll",
+            "cwd": "${workspaceFolder}/Usuarios",
+            "console": "integratedTerminal"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Ambos proyectos",
+            "configurations": [
+                "Tareas",
+                "Usuarios"
+            ]
+        }
+    ]
+}
