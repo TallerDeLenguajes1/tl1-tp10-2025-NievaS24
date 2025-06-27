@@ -18,15 +18,15 @@
             "program": "${workspaceFolder}/Usuarios/bin/Debug/net8.0/Usuarios.dll",
             "cwd": "${workspaceFolder}/Usuarios",
             "console": "integratedTerminal"
-        }
-    ],
-    "compounds": [
+        },
         {
-            "name": "Ambos proyectos",
-            "configurations": [
-                "Tareas",
-                "Usuarios"
-            ]
+            "name": "MiWebApi",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/MiWebApi/bin/Debug/net8.0/MiWebApi.dll",
+            "cwd": "${workspaceFolder}/MiWebApi",
+            "console": "integratedTerminal"
         }
     ]
 }
