@@ -28,7 +28,7 @@ foreach (Tarea tarea in listTareas)
 }
 //Serealizo y guardo en tareas.json
 string ruta = Directory.GetCurrentDirectory(); //Consigo la direccion de donde estoy trabajando, me devuelve dentro de bin
-ruta = Directory.GetParent(ruta).Parent.Parent.FullName; //Salgo de net8.0 -> Debug -> bin
+System.Console.WriteLine(ruta);
 using (StreamWriter sw = new StreamWriter(ruta + @"\tarea.json"))
 {
     string jsonString = JsonSerializer.Serialize(listTareas);
