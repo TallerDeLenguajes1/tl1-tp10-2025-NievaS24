@@ -7,3 +7,15 @@ response.EnsureSuccessStatusCode();
 string responseBody = await response.Content.ReadAsStringAsync();
 MarketStack marketStacks = JsonSerializer.Deserialize<MarketStack>(responseBody);
 List<Data> marketDatas = marketStacks.data;
+Console.WriteLine($"*** Datos de la bolsa en los ultimos dias ***");
+foreach (Data marketData in marketDatas)
+{
+    string stringFecha = marketData.date.Substring(0, 10); //Me queda solo la fecha 2025-06-27
+    Console.WriteLine($"Nombre: {marketData.name} ({marketData.symbol})");
+    Console.WriteLine($"\t Fecha: USD {stringFecha}");
+    Console.WriteLine($"\t Apertura: USD {marketData.open:0.00}");
+    Console.WriteLine($"\t Maximo: USD {marketData.high}");
+    Console.WriteLine($"\t Minimo: USD {marketData.low}");
+    Console.WriteLine($"\t Cierre: USD {marketData.close:0.00}");
+    Console.WriteLine($"\t Volumen: {marketData.volume}\n\n");
+}
