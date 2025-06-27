@@ -19,3 +19,9 @@ foreach (Data marketData in marketDatas)
     Console.WriteLine($"\t Cierre: USD {marketData.close:0.00}");
     Console.WriteLine($"\t Volumen: {marketData.volume}\n\n");
 }
+string ruta = Directory.GetCurrentDirectory();
+using (StreamWriter sw = new StreamWriter(ruta + @"\marketData.json"))
+{
+    string jsonString = JsonSerializer.Serialize(marketDatas);
+    sw.WriteLine(jsonString);
+}
